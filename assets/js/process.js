@@ -158,27 +158,28 @@ function startscan() { $('#startscan').on('click', function() {
 });}
 
 function FormWarning(str) {
-	var warn = document.getElementById("form-warning");
+	var warn = document.getElementById('form-warning');
 	warn.innerHTML = str;
 }
 
 function newuser() {
-	var name = document.getElementById("fullname");
-	var phonenumber = document.getElementById("phone-number");
+	var name = document.getElementById('fullname');
+	var phonenumber = document.getElementById('phone-number');
 	var validname = name.validity.valid;
 	var validphonenumber = phonenumber.validity.valid;
 	
-	// if(!validname && !validphonenumber)
-	// 	FormWarning("Tên và SĐT đều trống!");
-	// else if(!validname)
-	// 	FormWarning("Tên trống!");
-	// else if(!validphonenumber)
-	// 	FormWarning("SĐT trống!");
-	// else {
-		FormWarning("");
-		console.log(name.value);
-		console.log(phonenumber.value);
-	// }
+	if(!validname && !validphonenumber)
+		FormWarning('Tên và SĐT đều trống!');
+	else if(!validname)
+		FormWarning('Tên trống!');
+	else if(!validphonenumber)
+		FormWarning('SĐT trống!');
+	else {
+		FormWarning('');
+		// console.log(name.value);
+		// console.log(phonenumber.value);
+		$('#newuser-carousel').carousel('next');
+	}
 }
 
 // Main function
