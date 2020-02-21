@@ -44,50 +44,36 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3 class="modal-title">Khách hàng mới</h3>
+					<h3 class="modal-title">ĐĂNG KÝ KHÁCH HÀNG MỚI</h3>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 
 				<div class="modal-body">
-					<div class="form-group">
-						<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
+					<div id="newuser-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+						<div class="carousel-inner" role="listbox">
+							<div class="carousel-item active">
+								<div>
+									<p>Thông tin khách hàng</p>
+									<div class="form-group">
+										<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
+									</div>
+									<div class="form-group">
+										<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
+									</div>
+									<span id="form-warning"></span>
+									<span class="bottom-right">
+										<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
+										<button type="submit" class="btn btn-primary" onclick="newuser(this.value)"
+										>Đăng ký</button>
+									</span>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<p>This is Second Page</p>
+								<button type="submit" class="btn btn-primary" href="#newuser-carousel" data-slide="prev">Go back</button>
+							</div>
+						</div>
 					</div>
-					<div class="form-group">
-						<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
-					</div>
-					<span id="form-warning"></span>
-				</div>
-
-				<div class="modal-footer">
-					<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
-					<button type="submit" class="btn btn-primary step2" onclick="newuser(this.value)">Đăng ký</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- choose preference -->
-	<div class="modal fade" role="dialog" id="choosepreference">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h3 class="modal-title">Khách hàng mới</h3>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-
-				<div class="modal-body">
-					<div class="form-group">
-						<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
-					</div>
-					<div class="form-group">
-						<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
-					</div>
-					<span id="form-warning"></span>
-				</div>
-
-				<div class="modal-footer">
-					<button type="submit" class="btn step1" data-dismiss="modal">Đóng</button>
-					<button type="submit" class="btn btn-primary step2" onclick="newuser(this.value)">Đăng ký</button>
 				</div>
 			</div>
 		</div>
@@ -139,15 +125,14 @@
 
 		</form>
 	</div>
-
-	<script src="./assets/js/jquery-3.4.1.min.js"></script>
-	<script src="./assets/js/popper.min.js"></script>
-	<script src="./assets/js/bootstrap.min.js"></script>
-	<script src="./assets/js/mdb.min.js"></script>
-	<script src="./assets/js/toastr.min.js"></script>
-	<!----------------------------------------------------->
-	<script src="./assets/js/process.js"></script>
 </body>
 
+<script src="./assets/js/jquery-3.4.1.min.js"></script>
+<script src="./assets/js/popper.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/mdb.min.js"></script>
+<script src="./assets/js/toastr.min.js"></script>
+<!----------------------------------------------------->
+<script src="./assets/js/process.js"></script>
 
 </html>
