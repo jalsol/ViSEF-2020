@@ -1,0 +1,40 @@
+.navbar{
+    background-color: white !important;
+}
+body {
+    overflow: none;
+}
+.right {
+    position: absolute;
+    right: 16px;
+    color: black;
+    font-weight: bold;
+}
+.navbar .navbar-brand{
+    color : black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.navbar .nav-item a{
+    color: #fff !important;
+    margin-right: 30px;
+
+}
+
+.navbar .nav-item a:hover,
+.navbar .navbar-brand:hover,
+#navbarMenu button:hover {
+    color: #969da8 !important;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#navbarMenu button {
+    border-radius: 20px;
+    font-weight: bold;
+}

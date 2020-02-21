@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing...</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./assets/css/mdb.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/all.min.css">
+</head>
+<body>
+
+<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a href="/" class="navbar-brand" target="_self">
+				<strong>HỆ THỐNG GỢI Ý</strong>
+			</a>
+
+			<button class="btn btn-danger" id="startscan">BẮT ĐẦU QUÉT</button>
+			<button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">ĐĂNG KÝ</button>
+
+			<div class="right">
+				<a href="https://codeforces.com/profile/kseany">Hoàng Khang</a> và <a href="https://codeforces.com/profile/omgursocute" target="_blank">Quang Trường</a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="modal fade" role="dialog" id="newuserform">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Khách hàng mới</h3>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
+					</div>
+					<span id="form-warning"></span>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Đăng ký</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" role="dialog" id="regcam">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Quét khuôn mặt</h3>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<div class="modal-content">
+					<div class="button-group">
+						<button id="btn-start" type="button" class="button">Start Streaming</button>
+						<button id="btn-stop" type="button" class="button">Stop Streaming</button>
+						<button id="btn-capture" type="button" class="button">Capture Image</button>
+					</div>
+
+					<!-- Video Element & Canvas -->
+					<div class="play-area">
+						<div class="play-area-sub">
+							<h3>The Stream</h3>
+							<video id="stream" width="320" height="240"></video>
+						</div>
+						<div class="play-area-sub">
+							<h3>The Capture</h3>
+							<canvas id="capture" width="320" height="240"></canvas>
+							<div id="snapshot"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+	<script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./assets/js/mdb.min.js"></script>
+	<script type="text/javascript" src="process.js"></script>
+</html>

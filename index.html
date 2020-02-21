@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RECOMMENDATION SYSTEM</title>
+	<!-------------------->
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta content='width=device-width, initial-scale=1' name='viewport'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-------------------->
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/mdb.min.css">
+	<link rel="stylesheet" href="./assets/css/all.min.css">
+	<link rel="stylesheet" href="./assets/css/navbar.css">
+	<link rel="stylesheet" href="./assets/css/responsive.css">
+	<link rel="stylesheet" href="./assets/css/content.css">
+	<link rel="stylesheet" href="./assets/css/toastr.min.css">
+	<!-------------------->
+	<link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png"/>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a href="/" class="navbar-brand" target="_self">
+				<strong>HỆ THỐNG GỢI Ý</strong>
+			</a>
+
+			<button class="btn btn-danger" id="startscan">BẮT ĐẦU QUÉT</button>
+			<button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">ĐĂNG KÝ</button>
+
+			<div class="right">
+				<a href="https://www.facebook.com/atsmvcc">k534n7</a> và <a href="https://github.com/omgursocute/" target="_blank">omgursocute</a>
+			</div>
+
+			<button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+	</header>
+
+	<!-- new customer -->
+	<div class="modal fade" role="dialog" id="newuserform">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Khách hàng mới</h3>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
+					</div>
+					<span id="form-warning"></span>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
+					<button type="submit" class="btn btn-primary step2" onclick="newuser(this.value)">Đăng ký</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- choose preference -->
+	<div class="modal fade" role="dialog" id="choosepreference">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Khách hàng mới</h3>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="fullname" class="form-control" placeholder="Tên" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="phone-number" class="form-control" placeholder="SĐT" required>
+					</div>
+					<span id="form-warning"></span>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn step1" data-dismiss="modal">Đóng</button>
+					<button type="submit" class="btn btn-primary step2" onclick="newuser(this.value)">Đăng ký</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- main content -->
+	<div class="container-fluid">
+		<form class="justify-content-center align-content-center">
+			<div class="col justify-content-around">
+				<div class="row">
+					<div class="col-3 userslist">
+						<div class="md-form md-outline form-sm">
+							<input type="text" id="username" class="form-control form-lg">
+							<label for="username"><i class="fad fa-user"></i> Tìm kiếm khách hàng</label>
+						</div>
+						<div class="overflow-auto h-50 scrollbar-near-moon thin" id="list">
+						</div>
+					</div>
+					<div class="col-5 leftpopo">
+						<h5 id="showName"><br><br></h5>
+						<table id="recommendationlist" class="table fixed">
+							<thead class="black white-text">
+								<tr>
+									<th scope="col" style="width: 20%">Ảnh</th>
+									<th scope="col" style="width: 80%">Sản phẩm</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="rightpopo col-5">
+						<h5 id="showItemName"><br><br></h5>
+						<table id="similaritemslist" class="table fixed">
+							<thead class="black white-text">
+								<tr>
+									<th scope="col" style="width: 20%">Ảnh</th>
+									<th scope="col" style="width: 80%">Món hàng tương tự</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/popper.min.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/mdb.min.js"></script>
+	<script src="./assets/js/toastr.min.js"></script>
+	<!----------------------------------------------------->
+	<script src="./assets/js/process.js"></script>
+</body>
+
+
+</html>
