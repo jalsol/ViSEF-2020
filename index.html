@@ -32,10 +32,6 @@
 			<div class="right">
 				<a href="https://www.facebook.com/atsmvcc">k534n7</a> và <a href="https://github.com/omgursocute/" target="_blank">omgursocute</a>
 			</div>
-
-			<button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarMenu">
-				<span class="navbar-toggler-icon"></span>
-			</button>
 		</nav>
 	</header>
 
@@ -50,7 +46,14 @@
 
 				<div class="modal-body">
 					<div id="newuser-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+						<ol class="carousel-indicators">
+							<li data-target="#newuser-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#newuser-carousel" data-slide-to="1"></li>
+							<li data-target="#newuser-carousel" data-slide-to="2"></li>
+						</ol>
 						<div class="carousel-inner" role="listbox">
+
+							<!-- page 1 -->
 							<div class="carousel-item active">
 								<div>
 									<p>Thông tin khách hàng</p>
@@ -63,18 +66,60 @@
 									<span id="form-warning"></span>
 									<span class="bottom-right">
 										<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
-										<button type="submit" class="btn btn-primary" onclick="newuser(this.value)"
-										>Đăng ký</button>
+										<button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Đăng ký</button>
 									</span>
 								</div>
 							</div>
+
+							<!-- page 2 -->
 							<div class="carousel-item">
-								<p>This is Second Page</p>
-								<button type="submit" class="btn btn-primary" href="#newuser-carousel" data-slide="prev">Go back</button>
+								<div>
+									<p>Chọn tối thiểu 3 sản phẩm</p>
+									<span id="select-warning"></span>
+									<ul>
+										<li>
+											<input type="checkbox" id="myCheckbox1" name="a" value="1" />
+											<label for="myCheckbox1"><img src="./database/items_img/1.jpg" /></label>
+										</li>
+										<li>
+
+											<input type="checkbox" id="myCheckbox2" name="a" value="2" />
+											<label for="myCheckbox2"><img src="./database/items_img/2.jpg" /></label>
+										</li>
+										<li>
+
+											<input type="checkbox" id="myCheckbox3" name="a" value="3" />
+											<label for="myCheckbox3"><img src="./database/items_img/3.jpg" /></label>
+										</li>
+										<li>
+
+											<input type="checkbox" id="myCheckbox4" name="a" value="4" />
+											<label for="myCheckbox4"><img src="./database/items_img/4.jpg" /></label>
+										</li>
+										<li>
+
+											<input type="checkbox" id="myCheckbox5" name="a" value="5" />
+											<label for="myCheckbox5"><img src="./database/items_img/5.jpg" /></label>
+										</li>
+									</ul>
+									<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
+									<button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
+									<button type="submit" class="btn" onclick="move('next')">Tiếp tục</button>
+								</div>
+							</div>
+
+							<!-- page 3 -->
+							<div class="carousel-item">
+								<div>
+									Đây là nơi chụp ảnh<br>
+									<button type="submit" class="btn" data-dismiss="modal">Đóng</button>
+									<button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
