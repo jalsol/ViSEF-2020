@@ -74,7 +74,8 @@ img {
 	max-height: 75%;
 	max-width: 75%;
 }
-#form-warning {
+
+#form-warning, #select-warning {
 	color: red;
 }
 /*.modal-content {
@@ -106,7 +107,7 @@ img {
 	background-color: #ffff99;
 }
 .carousel-item {
-	height: 250px;
+	height: 350px;
 }
 
 .carousel-indicators li {
