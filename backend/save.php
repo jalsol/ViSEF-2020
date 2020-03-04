@@ -1,7 +1,10 @@
 <?php
 
-$directory = './uploads';
-exec('chmod -R 777 '.$directory);
+$directory = '../database/user_img';
+if(is_writable($directory))
+	echo 'ok';
+else
+	echo 'bad';
 
 $fi = new FilesystemIterator($directory, FilesystemIterator::SKIP_DOTS);
 $counter = iterator_count($fi)+1;

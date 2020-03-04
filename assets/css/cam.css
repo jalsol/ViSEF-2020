@@ -1,0 +1,30 @@
+#video {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  width:320px;
+  height:240px;
+}
+
+#photo {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  width:320px;
+  height:240px;
+}
+
+#canvas {
+  display:none;
+}
+
+.camera {
+  width: 340px;
+}
+
+.output {
+  width: 340px;
+}
+
+.contentarea {
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
