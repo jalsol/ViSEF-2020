@@ -1,0 +1,1 @@
+print('chao mung cac ban da den voi trai nghiem bi con gaiiii di')

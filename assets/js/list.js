@@ -14,7 +14,7 @@ function showSimilar(data, s) {
 	var i = 0;
 	$.each(data, function() {
 		$('#similaritemslist > tbody').append(
-			'<tr class="clickable_row"><th><img src="../../database/items_img/' +
+			'<tr class="clickable_row"><th><img class="product_img" src="../../database/items_img/' +
 			this[0] +
 			'.jpg"></th><th>' +
 			data[i++][1] + '</th></tr>'
@@ -89,7 +89,7 @@ function getRecommendation(data) {
 	var counter = 1;
 	$.each(data, function() {
 		$('#recommendationlist > tbody').append(
-			'<tr class="clickable_row"><th><img src="../../database/items_img/' +
+			'<tr class="clickable_row"><th><img class="product_img" src="../../database/items_img/' +
 			this.id+'.jpg"></th><th id="name' +
 			(counter++).toString()+'">' + this.name + '</th></tr>'
 		);
@@ -131,45 +131,6 @@ function startscan() {
 		});
 	});
 }
-
-function FormWarning(str) {
-	var warn = document.getElementById('form-warning');
-	warn.innerHTML = str;
-}
-
-function newuser() {
-	// var name = document.getElementById('fullname');
-	// var phonenumber = document.getElementById('phone-number');
-	// var validname = name.validity.valid;
-	// var validphonenumber = phonenumber.validity.valid;
-	
-	// if(!validname && !validphonenumber)
-	// 	FormWarning('Tên và SĐT đều trống!');
-	// else if(!validname)
-	// 	FormWarning('Tên trống!');
-	// else if(!validphonenumber)
-	// 	FormWarning('SĐT trống!');
-	// else {
-	// 	FormWarning('');
-	// 	// console.log(name.value);
-	// 	// console.log(phonenumber.value);
-	// 	$('#newuser-carousel').carousel('next');
-	// }
-	move('next');
-}
-
-function move(s) {
-	$('#newuser-carousel').carousel(s);
-}
-
-function validateCheckbox() {
-	var a = [];
-	$("input:checkbox[name=checkbox-list]:checked").each(function() {
-    	a.push($(this).val());
-	});
-	console.log(a);
-}
-
 
 // main
 $(document).ready(function() {

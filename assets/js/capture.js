@@ -15,15 +15,6 @@ function startup() {
 	startbutton = document.getElementById('startbutton');
 	mul = document.getElementById('startmul');
 
-	navigator.mediaDevices.getUserMedia({video: true, audio: false})
-	.then(function(stream) {
-		video.srcObject = stream;
-		video.play();
-	})
-	.catch(function(err) {
-		console.log("An error occurred: " + err);
-	});
-
 	video.addEventListener('canplay', function(ev){
 		if (!streaming) {
 			height = video.videoHeight / (video.videoWidth/width);
@@ -53,6 +44,23 @@ function startup() {
 	clearphoto();
 }
 
+function init() {
+	navigator.mediaDevices.getUserMedia({video: true, audio: false})
+	.then(function(stream) {
+		video.srcObject = stream;
+		video.play();
+	})
+	.catch(function(err) {
+		console.log("An error occurred: " + err);
+	});
+}
+
+function quit() {
+	video.srcObject.getTracks().forEach(function(track) {
+ 		track.stop();
+	});
+}
+
 function clearphoto() {
 	var context = canvas.getContext('2d');
 	context.fillStyle = "#AAA";
@@ -80,7 +88,7 @@ function takepicture() {
 function get() {
 	var myImg = document.getElementById("photo").src;
 	$.ajax({
-		url: 'save.php',
+		url: '../../backend/save.php',
 		type: 'post',
 		data: {encoded_img: myImg},
 		success: function(data) {
@@ -93,11 +101,10 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function takemul(picnum, time) {
+async function takemul(picnum=5, time=1) {
 	for(var i = 0; i < picnum; i++) {
 		takepicture();
 		await sleep(time*1000);
 	}
 }
 window.addEventListener('load', startup, false);
-

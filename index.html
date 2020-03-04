@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="./assets/css/mdb.min.css">
   <link rel="stylesheet" href="./assets/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/navbar.css">
-  <link rel="stylesheet" href="./assets/css/responsive.css">
   <link rel="stylesheet" href="./assets/css/content.css">
+  <link rel="stylesheet" href="./assets/css/cam.css">
+  <link rel="stylesheet" href="./assets/css/carousel.css">
+  <link rel="stylesheet" href="./assets/css/checkbox.css">
   <link rel="stylesheet" href="./assets/css/toastr.min.css">
   <!-------------------->
   <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png"/>
@@ -35,7 +37,7 @@
 
   <!-- new customer -->
   <div class="modal fade" role="dialog" id="newuserform">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title">ĐĂNG KÝ KHÁCH HÀNG MỚI</h3>
@@ -80,7 +82,7 @@
                 <div>
                   <p>Chọn tối thiểu 3 sản phẩm</p>
                   <span id="select-warning"></span>
-                  <ul>
+                  <ul id="checkbox-area">
                     <li>
                       <input type="checkbox" id="checkbox-unit-1" name="checkbox-list" value="1" />
                       <label for="checkbox-unit-1"><img src="./database/items_img/1.jpg" /></label>
@@ -101,7 +103,6 @@
                       <label for="checkbox-unit-4"><img src="./database/items_img/4.jpg" /></label>
                     </li>
                     <li>
-
                       <input type="checkbox" id="checkbox-unit-5" name="checkbox-list" value="5" />
                       <label for="checkbox-unit-5"><img src="./database/items_img/5.jpg" /></label>
                     </li>
@@ -115,7 +116,20 @@
               <!-- page 3 -->
               <div class="carousel-item">
                 <div>
-                  Đây là nơi chụp ảnh<br>
+                  <div class="contentarea">
+                    <div class="camera">
+                      <video id="video">Video stream not available.</video>
+                    </div>
+
+                    <canvas id="canvas">
+                    </canvas>
+
+                    <div class="output">
+                      <img id="photo" alt="The screen capture will appear in this box."> 
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" id="startbutton">Take photo</button>
+                  <button class="btn btn-primary" id="startmul">Take photos</button>
                   <button type="submit" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                   <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
                 </div>
@@ -164,7 +178,6 @@
                   <th scope="col" style="width: 80%">Món hàng tương tự</th>
                 </tr>
               </thead>
-              
               <tbody>
               </tbody>
             </table>
@@ -182,6 +195,8 @@
 <script src="./assets/js/mdb.min.js"></script>
 <script src="./assets/js/toastr.min.js"></script>
 <!----------------------------------------------------->
-<script src="./assets/js/process.js"></script>
+<script src="./assets/js/list.js"></script>
+<script src="./assets/js/capture.js"></script>
+<script src="./assets/js/register.js"></script>
 
 </html>
