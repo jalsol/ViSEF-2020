@@ -3,7 +3,7 @@ toastr.options = {
 	"newestOnTop": false,
 	"timeOut": "1500",
 	"extendedTimeOut": "0",
-	"positionClass": "toast-top-right"
+	"positionClass": "toast-bottom-right"
 }
 
 function showSimilar(data, s) {
@@ -14,10 +14,14 @@ function showSimilar(data, s) {
 	var i = 0;
 	$.each(data, function() {
 		$('#similaritemslist > tbody').append(
-			'<tr class="clickable_row"><th><img class="product_img" src="../../database/items_img/' +
-			this[0] +
-			'.jpg"></th><th>' +
-			data[i++][1] + '</th></tr>'
+			'<tr class="clickable_row">' +
+				'<th>' +
+					'<img class="product_img" src="../../database/items_img/' + this[0] + '.jpg">' +
+				'</th>' +
+				'<th>' +
+					data[i++][1] +
+				'</th>' +
+			'</tr>'
 		);
 	});
 }
@@ -46,11 +50,6 @@ function RecommendOnClick() {
 			success: getRecommendation
 		}).done(() => {
 			SearchByName('name1');
-			$(function () {
-				$('#recommendationlist > tbody > .clickable_row *').on('click', function() {
-					SearchByName(this.id);
-				})
-			})
 		});
 	});
 }
@@ -89,9 +88,14 @@ function getRecommendation(data) {
 	var counter = 1;
 	$.each(data, function() {
 		$('#recommendationlist > tbody').append(
-			'<tr class="clickable_row"><th><img class="product_img" src="../../database/items_img/' +
-			this.id+'.jpg"></th><th id="name' +
-			(counter++).toString()+'">' + this.name + '</th></tr>'
+			'<tr class="clickable_row">' +
+				'<th>' +
+					'<img class="product_img" src="../../database/items_img/' + this.id + '.jpg">' +
+				'</th>' +
+				'<th id="name' + (counter++).toString()+'">' +
+					this.name +
+				'</th>' +
+			'</tr>'
 		);
 	});
 
@@ -132,9 +136,22 @@ function startscan() {
 	});
 }
 
+function gencheckbox() {
+	for(var id = 1; id <= 10; id++) {
+		var i = id.toString();
+		$('#checkbox-area').append(
+			'<li>' +
+                '<input type="checkbox" id="checkbox-unit-' + i + '" name="checkbox-list" value="' + i + '"/>' +
+                '<label for="checkbox-unit-' + i + '"><img src="./database/items_img/' + i + '.jpg" /></label>' +
+            '</li>'
+        )
+	}
+}
+
 // main
 $(document).ready(function() {
 	genbutton();
+	gencheckbox();
 	search();
 	startscan();
 });

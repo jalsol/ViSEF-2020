@@ -30,7 +30,7 @@
 
       <div class="right">
       <button class="btn btn-danger" id="startscan">BẮT ĐẦU QUÉT</button>
-      <button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">ĐĂNG KÝ</button>
+      <button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">THÊM KHÁCH HÀNG</button>
       </div>
     </nav>
   </header>
@@ -41,7 +41,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title">ĐĂNG KÝ KHÁCH HÀNG MỚI</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" onclick="show_confirm()">&times;</button>
         </div>
 
         <div class="modal-body">
@@ -71,8 +71,8 @@
                   </div>
                   <span id="form-warning"></span>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Đăng ký</button>
+                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Tiếp tục</button>
                   </span>
                 </div>
               </div>
@@ -83,33 +83,12 @@
                   <p>Chọn tối thiểu 3 sản phẩm</p>
                   <span id="select-warning"></span>
                   <ul id="checkbox-area">
-                    <li>
-                      <input type="checkbox" id="checkbox-unit-1" name="checkbox-list" value="1" />
-                      <label for="checkbox-unit-1"><img src="./database/items_img/1.jpg" /></label>
-                    </li>
-                    <li>
-
-                      <input type="checkbox" id="checkbox-unit-2" name="checkbox-list" value="2" />
-                      <label for="checkbox-unit-2"><img src="./database/items_img/2.jpg" /></label>
-                    </li>
-                    <li>
-
-                      <input type="checkbox" id="checkbox-unit-3" name="checkbox-list" value="3" />
-                      <label for="checkbox-unit-3"><img src="./database/items_img/3.jpg" /></label>
-                    </li>
-                    <li>
-
-                      <input type="checkbox" id="checkbox-unit-4" name="checkbox-list" value="4" />
-                      <label for="checkbox-unit-4"><img src="./database/items_img/4.jpg" /></label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="checkbox-unit-5" name="checkbox-list" value="5" />
-                      <label for="checkbox-unit-5"><img src="./database/items_img/5.jpg" /></label>
-                    </li>
                   </ul>
-                  <button type="submit" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                  <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
-                  <button type="submit" class="btn" onclick="move('next')">Tiếp tục</button>
+                  <span class="bottom-right">
+                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
+                    <button type="submit" class="btn" onclick="validateCheckbox()">Tiếp tục</button>
+                  </span>
                 </div>
               </div>
 
@@ -128,16 +107,40 @@
                       <img id="photo" alt="The screen capture will appear in this box."> 
                     </div>
                   </div>
+                  <i>*Lưu ý: chỉ được có một khách hàng trong khung hình.</i>
+                  <br>
+                  <br>
+                  <br>
                   <button class="btn btn-primary" id="startbutton">Take photo</button>
                   <button class="btn btn-primary" id="startmul">Take photos</button>
-                  <button type="submit" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                  <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
+                  <span class="bottom-right">
+                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
+                    <button type="submit" class="btn" onclick="move('prev')">Hoàn tất</button>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- confirmation form -->
+  <div class="modal fade" role="dialog" id="confirm-form">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          ĐÓNG CỬA SỔ?
+        </div>
+        <div class="modal-body">
+          Bạn có muốn đóng cửa sổ này chứ?
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" onclick="dismiss_modal()">Đồng ý</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
+        </div>
       </div>
     </div>
   </div>
