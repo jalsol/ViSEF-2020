@@ -41,7 +41,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title">ĐĂNG KÝ KHÁCH HÀNG MỚI</h3>
-          <button type="button" class="close" onclick="show_confirm()">&times;</button>
+          <button type="button" class="close" onclick="show_close()">&times;</button>
         </div>
 
         <div class="modal-body">
@@ -71,7 +71,7 @@
                   </div>
                   <span id="form-warning"></span>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
                     <button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Tiếp tục</button>
                   </span>
                 </div>
@@ -85,7 +85,7 @@
                   <ul id="checkbox-area">
                   </ul>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
                     <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
                     <button type="submit" class="btn" onclick="validateCheckbox()">Tiếp tục</button>
                   </span>
@@ -114,7 +114,7 @@
                   <button class="btn btn-primary" id="startbutton">Take photo</button>
                   <button class="btn btn-primary" id="startmul">Take photos</button>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_confirm()">Đóng</button>
+                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
                     <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
                     <button type="submit" class="btn" onclick="move('prev')">Hoàn tất</button>
                   </span>
@@ -127,8 +127,8 @@
     </div>
   </div>
 
-  <!-- confirmation form -->
-  <div class="modal fade" role="dialog" id="confirm-form">
+  <!-- close form -->
+  <div class="modal fade" role="dialog" id="close-form">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -138,7 +138,25 @@
           Bạn có muốn đóng cửa sổ này chứ?
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
           <button type="submit" class="btn btn-danger" onclick="dismiss_modal()">Đồng ý</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- confirm form -->
+  <div class="modal fade" role="dialog" id="confirm-form">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          XÁC NHẬN?
+        </div>
+        <div class="modal-body">
+          Bạn có muốn tạo khách hàng này chứ?
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" onclick="create_new_user()">Đồng ý</button>
           <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
         </div>
       </div>
