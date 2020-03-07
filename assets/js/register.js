@@ -64,6 +64,7 @@ function validateCheckbox() {
 	}
 }
 
+var id = null;
 function create_new_user() {
 	$.ajax({
 		url: '../../backend/create_new_user.php',
@@ -74,8 +75,12 @@ function create_new_user() {
 			city: city,
 			country: country,
 			preselectedItems: preselectedItems
+		},
+		success: function(data) {
+			id = parseInt(data);
 		}
 	}).done(() => {
 		show_confirm();
+		move('next');
 	});
 }

@@ -90,7 +90,10 @@ function get() {
 	$.ajax({
 		url: '../../backend/save.php',
 		type: 'post',
-		data: {encoded_img: myImg},
+		data: {
+			encoded_img: myImg,
+			id: id
+		},
 		success: function(data) {
 			console.log(data);
 		}

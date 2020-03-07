@@ -1,6 +1,6 @@
 <?php
 
-$f = fopen('../users/log.csv', 'a');
+$f = fopen('../database/user_info.csv', 'a');
 
 $name = "\"".$_POST['name']."\",";
 $phonenumber = "\"".$_POST['phonenumber']."\",";
@@ -11,4 +11,10 @@ $data = $name.$phonenumber.$city.$country;
 fwrite($f, $data);
 fclose($f);
 
+$directory = "../database/user_recommendation/";
+$counter = count(glob($directory."*.csv")) + 1;
+
+file_put_contents($directory.$counter.".csv", print_r($_POST['preselectedItems'], true));
+
+echo $counter;
 ?>
