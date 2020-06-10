@@ -19,7 +19,7 @@ function showConfirmForm() {
 }
 
 function dismissModal() {
-	if($('div.active').index() == 2) quit();
+	if($('div.active').index() == 2) quitCameraStream();
 	// confirm
 	$('#close-form').modal('toggle');
 	$('#newuserform').modal('toggle');
@@ -43,7 +43,7 @@ function validateForm() {
 	else if(city == "")
 		alert('Hãy điền thành phố/tỉnh.');
 	else if(country == "")
-		alert('Hãy điền tên nước.');
+		alert('Hãy điền tên quốc gia.');
 	else if(/\D/.test(phonenumber))
 		alert('Số điện thoại chỉ được chứa các chữ số.')
 	else
@@ -77,6 +77,7 @@ function addNewUserToDB() {
 		},
 		success: function(data) {
 			id = parseInt(data);
+			console.log('the id of the new user is', id);
 		}
 	}).done(() => {
 		showConfirmForm();
