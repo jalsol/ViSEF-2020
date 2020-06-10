@@ -5,7 +5,8 @@
     else {
         if ($_POST['type'] === "New_Users") {
             // exec new users 
-            echo shell_exec('cd ../../ML/face-recognition && ./tasks/train.sh');
+            // echo shell_exec('cd ../ML/face-recognition; pwd; /usr/bin/python3 -m training.train -d \"./images\"');
+            echo shell_exec('./test.sh 2>&1');
         }
         else if ($_POST['type'] === "Recommendation") {
             // exec recommendation command
