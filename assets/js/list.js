@@ -56,7 +56,7 @@ function RecommendOnClick() {
 
 function genbutton() {
 	$.ajax({
-		url: '../../backend/createlist.php',
+		url: '../../backend/create_users_list.php',
 		success: (data) => {
 			data = $.parseJSON(data);
 

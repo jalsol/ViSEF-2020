@@ -2,9 +2,9 @@
 $data = array();
 $row = 0;
 $counter = 1;
-if(($handle = fopen('../database/user_info.csv', 'r')) !== false) {
-	while(($d = fgetcsv($handle, 1000, ",")) !== false) {
-		if(++$row == 1) {continue;}
+if (($handle = fopen('../database/user_info.csv', 'r')) !== false) {
+	while (($d = fgetcsv($handle, 1000, ",")) !== false) {
+		if (++$row == 1) continue;
 
 		$temp = array();
 		$temp['name'] = $d[0];

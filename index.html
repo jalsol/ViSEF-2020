@@ -41,7 +41,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title">ĐĂNG KÝ KHÁCH HÀNG MỚI</h3>
-          <button type="button" class="close" onclick="show_close()">&times;</button>
+          <button type="button" class="close" onclick="closeRegisterForm()">&times;</button>
         </div>
 
         <div class="modal-body">
@@ -71,8 +71,8 @@
                   </div>
                   <span id="form-warning"></span>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
-                    <button type="submit" class="btn btn-primary" onclick="newuser(this.value)">Tiếp tục</button>
+                    <button type="submit" class="btn btn-danger" onclick="closeRegisterForm()">Đóng</button>
+                    <button type="submit" class="btn btn-primary" onclick="validateForm(this.value)">Tiếp tục</button>
                   </span>
                 </div>
               </div>
@@ -85,7 +85,7 @@
                   <ul id="checkbox-area">
                   </ul>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
+                    <button type="submit" class="btn btn-danger" onclick="closeRegisterForm()">Đóng</button>
                     <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
                     <button type="submit" class="btn" onclick="validateCheckbox()">Tiếp tục</button>
                   </span>
@@ -114,9 +114,9 @@
                   <button class="btn btn-primary" id="startbutton">Take photo</button>
                   <button class="btn btn-primary" id="startmul">Take photos</button>
                   <span class="bottom-right">
-                    <button type="submit" class="btn btn-danger" onclick="show_close()">Đóng</button>
+                    <button type="submit" class="btn btn-danger" onclick="closeRegisterForm()">Đóng</button>
                     <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
-                    <button type="submit" class="btn" onclick="move('prev')">Hoàn tất</button>
+                    <button type="submit" class="btn" onclick="closeRegisterForm()">Hoàn tất</button>
                   </span>
                 </div>
               </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
-          <button type="submit" class="btn btn-danger" onclick="dismiss_modal()">Đồng ý</button>
+          <button type="submit" class="btn btn-danger" onclick="dismissModal()">Đồng ý</button>
         </div>
       </div>
     </div>
@@ -156,7 +156,7 @@
           Bạn có muốn tạo khách hàng này chứ?
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-danger" onclick="create_new_user()">Đồng ý</button>
+          <button type="submit" class="btn btn-danger" onclick="addNewUserToDB()">Đồng ý</button>
           <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
         </div>
       </div>

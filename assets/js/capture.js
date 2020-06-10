@@ -8,7 +8,7 @@ var canvas = null;
 var photo = null;
 var startbutton = null;
 
-function startup() {
+function startupVideoFrame() {
 	video = document.getElementById('video');
 	canvas = document.getElementById('canvas');
 	photo = document.getElementById('photo');
@@ -32,19 +32,19 @@ function startup() {
 	}, false);
 
 	startbutton.addEventListener('click', function(ev){
-		takepicture();
+		captureImage();
 		ev.preventDefault();
 	}, false);
 
 	mul.addEventListener('click', function(ev){
-		takemul(5, 1);
+		captureMultipleImages(5, 1);
 		ev.preventDefault();
 	}, false);
 
-	clearphoto();
+	clearCanvas();
 }
 
-function init() {
+function initCameraStream() {
 	navigator.mediaDevices.getUserMedia({video: true, audio: false})
 	.then(function(stream) {
 		video.srcObject = stream;
@@ -55,13 +55,13 @@ function init() {
 	});
 }
 
-function quit() {
+function quitCameraStream() {
 	video.srcObject.getTracks().forEach(function(track) {
  		track.stop();
 	});
 }
 
-function clearphoto() {
+function clearCanvas() {
 	var context = canvas.getContext('2d');
 	context.fillStyle = "#AAA";
 	context.fillRect(0, 0, canvas.width, canvas.height);
@@ -70,7 +70,7 @@ function clearphoto() {
 	photo.setAttribute('src', data);
 }
 
-function takepicture() {
+function captureImage() {
 	var context = canvas.getContext('2d');
 	if (width && height) {
 		canvas.width = width;
@@ -79,16 +79,16 @@ function takepicture() {
 	
 		var data = canvas.toDataURL('image/png');
 		photo.setAttribute('src', data);
-		get();
+		getCapturedImages();
 	} else {
-		clearphoto();
+		clearCanvas();
 	}
 }
 
-function get() {
+function getCapturedImages() {
 	var myImg = document.getElementById("photo").src;
 	$.ajax({
-		url: '../../backend/save.php',
+		url: '../../backend/save_captured_images.php',
 		type: 'post',
 		data: {
 			encoded_img: myImg,
@@ -104,10 +104,10 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function takemul(picnum=5, time=1) {
+async function captureMultipleImages(picnum=5, time=1) {
 	for(var i = 0; i < picnum; i++) {
-		takepicture();
-		await sleep(time*1000);
+		captureImage();
+		await sleep(time * 1000);
 	}
 }
-window.addEventListener('load', startup, false);
+window.addEventListener('load', startupVideoFrame, false);
