@@ -1,0 +1,1 @@
+echo 'hi, this is test 1'
