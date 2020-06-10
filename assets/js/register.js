@@ -4,22 +4,21 @@ function FormWarning(str) {
 }
 
 async function move(s) {
-	if($('div.active').index() == 2) quit();
+	if($('div.active').index() == 2) quitCameraStream();
 	$('#newuser-carousel').carousel(s);
 	await sleep(750);
-	if($('div.active').index() == 2) init();
+	if($('div.active').index() == 2) initCameraStream();
 }
 
-function show_close() {
+function closeRegisterForm() {
 	$('#close-form').modal('toggle');
 }
 
-function show_confirm() {
+function showConfirmForm() {
 	$('#confirm-form').modal('toggle');
 }
 
-
-function dismiss_modal() {
+function dismissModal() {
 	if($('div.active').index() == 2) quit();
 	// confirm
 	$('#close-form').modal('toggle');
@@ -31,7 +30,7 @@ var phonenumber = null;
 var city = null;
 var country = null;
 
-function newuser() {
+function validateForm() {
 	name = $('#fullname').val();
 	phonenumber = $('#phone-number').val();
 	city = $('#city').val();
@@ -60,14 +59,14 @@ function validateCheckbox() {
 		alert('Không đủ.');
 	}
 	else {
-		show_confirm();
+		showConfirmForm();
 	}
 }
 
 var id = null;
-function create_new_user() {
+function addNewUserToDB() {
 	$.ajax({
-		url: '../../backend/create_new_user.php',
+		url: '../../backend/add_new_user_to_db.php',
 		type: 'post',
 		data: {
 			name: name,
@@ -80,7 +79,7 @@ function create_new_user() {
 			id = parseInt(data);
 		}
 	}).done(() => {
-		show_confirm();
+		showConfirmForm();
 		move('next');
 	});
 }
