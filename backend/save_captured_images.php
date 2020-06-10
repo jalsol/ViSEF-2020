@@ -1,6 +1,6 @@
 <?php
 
-$directory = '../database/user_img/'.$_POST['id'];
+$directory = '../ML/face-recognition/images/'.$_POST['id'];
 if (!file_exists($directory)) {
     mkdir($directory, 0777, true);
 }

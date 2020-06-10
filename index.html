@@ -22,15 +22,36 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <a href="/" class="navbar-brand" target="_self">
         <strong>HỆ THỐNG GỢI Ý</strong>
       </a>
 
       <div class="right">
-      <button class="btn btn-danger" id="startscan">BẮT ĐẦU QUÉT</button>
+      <button class="btn btn-warning" id="startscan">TRAIN NGƯỜI MỚI</button>
+      <button class="btn btn-danger" id="startscan">TRAIN TOÀN BỘ</button>
       <button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">THÊM KHÁCH HÀNG</button>
+      </div>
+    </nav>
+  </header> -->
+
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a href="/" class="navbar-brand" target="_self">
+        <strong>HỆ THỐNG GỢI Ý</strong>
+      </a>
+
+      <div class="right dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <button class="btn btn-warning dropdown-item" id="trainNewUsers">TRAIN NGƯỜI MỚI</button>
+          <button class="btn btn-danger dropdown-item" id="trainRecommendation">TRAIN RECOMMENDATION</button>
+          <button class="btn btn-info dropdown-item" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">THÊM KHÁCH HÀNG</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -219,5 +240,6 @@
 <script src="./assets/js/list.js"></script>
 <script src="./assets/js/capture.js"></script>
 <script src="./assets/js/register.js"></script>
+<script src="./assets/js/train_buttons.js"></script>
 
 </html>

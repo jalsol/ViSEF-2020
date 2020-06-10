@@ -125,17 +125,6 @@ function search() {
 	});
 }
 
-function startscan() {
-	$('#startscan').on('click', function() {
-		$.ajax({
-			url: '../../backend/run.php',
-			success: function(data) {
-				console.log(data);
-			}
-		});
-	});
-}
-
 function gencheckbox() {
 	for(var id = 1; id <= 10; id++) {
 		var i = id.toString();
@@ -153,5 +142,6 @@ $(document).ready(function() {
 	genbutton();
 	gencheckbox();
 	search();
-	startscan();
+	trainNewUsers();
+	trainRecommendation();
 });
