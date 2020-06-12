@@ -1,5 +1,6 @@
 function trainNewUsers() {
 	$('#trainNewUsers').on('click', function() {
+        console.log("training new users started");
 		$.ajax({
             type: "POST",
             url: "../../backend/train_data.php",
@@ -8,7 +9,6 @@ function trainNewUsers() {
             },
             success: function (response) {
                 console.log(response);
-                console.log("training new users started");
             }
         });
 	});
@@ -16,6 +16,7 @@ function trainNewUsers() {
 
 function trainRecommendation() {
 	$('#trainRecommendation').on('click', function() {
+        console.log("training recommendation started");
 		$.ajax({
             type: "POST",
             url: "../../backend/train_data.php",
@@ -24,7 +25,6 @@ function trainRecommendation() {
             },
             success: function (response) {
                 console.log(response);
-                console.log("training recommendation started");
             }
         });
 	});

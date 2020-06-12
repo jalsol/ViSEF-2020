@@ -1,0 +1,1 @@
+cd ../ML/face-recognition; pwd; /usr/bin/python3 -m inference.video_classifier

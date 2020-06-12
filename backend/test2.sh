@@ -1,1 +1,4 @@
-echo 'hi, this is test 2'
+# cd ../ML/face-recognition; pwd; konsole -e "echo 'hi'"
+# python3 create_local_process.py
+# /usr/bin/python3 -m inference.video_classifier
+DISPLAY:=0; xterm -e "vlc" &
