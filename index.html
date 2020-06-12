@@ -22,20 +22,6 @@
 </head>
 
 <body>
-  <!-- <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a href="/" class="navbar-brand" target="_self">
-        <strong>HỆ THỐNG GỢI Ý</strong>
-      </a>
-
-      <div class="right">
-      <button class="btn btn-warning" id="startscan">TRAIN NGƯỜI MỚI</button>
-      <button class="btn btn-danger" id="startscan">TRAIN TOÀN BỘ</button>
-      <button class="btn btn-info" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">THÊM KHÁCH HÀNG</button>
-      </div>
-    </nav>
-  </header> -->
-
     <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <a href="/" class="navbar-brand" target="_self">
@@ -44,12 +30,12 @@
 
       <div class="right dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+          DANH SÁCH TUỲ CHỌN
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <button class="btn btn-warning dropdown-item" id="trainNewUsers">TRAIN NGƯỜI MỚI</button>
-          <button class="btn btn-danger dropdown-item" id="trainRecommendation">TRAIN RECOMMENDATION</button>
+          <button class="btn btn-warning dropdown-item" id="trainNewUsers">HUẤN LUYỆN NGƯỜI MỚI</button>
+          <button class="btn btn-danger dropdown-item" id="trainRecommendation">HUẤN LUYỆN GỢI Ý</button>
           <button class="btn btn-info dropdown-item" id="newuser" onclick="FormWarning('')" data-toggle="modal" data-target="#newuserform">THÊM KHÁCH HÀNG</button>
         </div>
       </div>
@@ -132,12 +118,12 @@
                   <br>
                   <br>
                   <br>
-                  <button class="btn btn-primary" id="startbutton">Take photo</button>
-                  <button class="btn btn-primary" id="startmul">Take photos</button>
+                  <button class="btn btn-primary" id="startbutton">Chụp một ảnh</button>
+                  <button class="btn btn-primary" id="startmul">Chụp nhiều ảnh</button>
                   <span class="bottom-right">
                     <button type="submit" class="btn btn-danger" onclick="closeRegisterForm()">Đóng</button>
                     <button type="submit" class="btn" onclick="move('prev')">Quay lại</button>
-                    <button type="submit" class="btn" onclick="closeRegisterForm()">Hoàn tất</button>
+                    <button type="submit" class="btn btn-success" onclick="closeRegisterForm()">Hoàn tất</button>
                   </span>
                 </div>
               </div>
@@ -177,8 +163,8 @@
           Bạn có muốn tạo khách hàng này chứ?
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-danger" onclick="addNewUserToDB()">Đồng ý</button>
           <button type="submit" class="btn btn-primary" data-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-danger" onclick="addNewUserToDB()">Đồng ý</button>
         </div>
       </div>
     </div>

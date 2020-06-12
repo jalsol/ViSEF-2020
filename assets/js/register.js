@@ -19,10 +19,12 @@ function showConfirmForm() {
 }
 
 function dismissModal() {
-	if($('div.active').index() == 2) quitCameraStream();
-	// confirm
 	$('#close-form').modal('toggle');
 	$('#newuserform').modal('toggle');
+	if($('div.active').index() == 2) {
+		quitCameraStream();
+		$('#newuser-carousel').carousel(0);
+	}
 }
 
 var name = null;
