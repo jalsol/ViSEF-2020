@@ -12,9 +12,9 @@
             // exec recommendation command
             // posix_setuid(1000);
             // echo posix_getuid()."\n"; //10000
-            // exec('./test2.sh 2>&1');
+            echo system('./test2.sh 2>&1');
             // echo shell_exec('vlc');
-            pclose(popen("/usr/bin/konsole -e '/usr/bin/vlc' 2>&1", "r"));
+            // pclose(popen("/usr/bin/konsole -e '/usr/bin/vlc' 2>&1", "r"));
         }
         else {
             echo 'Seems like you lost your way...';
